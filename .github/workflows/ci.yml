@@ -13,7 +13,7 @@ jobs:
   python:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -36,7 +36,7 @@ jobs:
       run:
         working-directory: apps/web
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -82,7 +82,7 @@ jobs:
       STORAGE_BACKEND: local
       ENABLE_FAKE_PROVIDER: 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -107,7 +107,7 @@ jobs:
       LIVE_E2E: 'true'
       E2E_BASE_URL: http://localhost:3000
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -157,7 +157,7 @@ jobs:
   infrastructure:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: '1.10.5'
@@ -183,7 +183,7 @@ jobs:
   dependency-security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
