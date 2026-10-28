@@ -40,7 +40,7 @@ jobs:
         run: |
           [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo 'release_sha must be a full commit SHA'; exit 1; }
           gh api "repos/$GH_REPO/actions/workflows/ci.yml/runs?head_sha=$RELEASE_SHA&status=success" --jq '.workflow_runs | any(.event == "push" and .head_branch == "main")' | grep -qx true
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ inputs.release_sha }}
       - uses: aws-actions/configure-aws-credentials@v4
