@@ -1,0 +1,29 @@
+{
+  "mode": "deterministic_fixture_evaluation",
+  "synthetic_data": true,
+  "invoice_pdf_text_and_schema_validation_rate": 1.0,
+  "invoice_cases": 20,
+  "property_conflict_detection_accuracy": 1.0,
+  "property_cases": 30,
+  "retrieval_precision_at_1": 1.0,
+  "retrieval_recall_at_1": 1.0,
+  "retrieval_cases": 10,
+  "citation_reference_correctness": 1.0,
+  "cross_department_access_violations": 0,
+  "unknown_query_has_no_evidence": true,
+  "average_latency_ms": 2.474,
+  "live_model_extraction_accuracy": null,
+  "unsupported_model_answer_frequency": null,
+  "token_consumption": null,
+  "model_cost_usd": null,
+  "notes": [
+    "No live LLM call is made by default. Provider accuracy, answer entailment and token costs remain unmeasured.",
+    "Precision/recall are lexical search at k=1 over ten synthetic policy-title queries, not a production benchmark.",
+    "Invoice score validates real PDF text extraction and expected schema math, not model field extraction.",
+    "Workflow completion, provider protocols, restart recovery and security boundaries are measured by make test."
+  ],
+  "evaluated_at": "2026-10-17T16:14:23.020169+00:00",
+  "legal_evidence_cases": 10,
+  "legal_fabricated_quote_rejection_rate": 1.0,
+  "live_legal_extraction_accuracy": null
+}

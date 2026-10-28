@@ -1,0 +1,326 @@
+{
+  "realm": "enterpriseflow",
+  "enabled": true,
+  "displayName": "EnterpriseFlow AI \u2014 local demo",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": false,
+  "rememberMe": false,
+  "sslRequired": "none",
+  "accessTokenLifespan": 300,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 28800,
+  "roles": {
+    "realm": [
+      {
+        "name": "employee"
+      },
+      {
+        "name": "manager"
+      },
+      {
+        "name": "department_admin"
+      },
+      {
+        "name": "platform_admin"
+      },
+      {
+        "name": "auditor"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "enterpriseflow-web",
+      "name": "EnterpriseFlow local browser",
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:3000/*",
+        "http://localhost:8000/*"
+      ],
+      "webOrigins": [
+        "http://localhost:3000"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:3000/*"
+      },
+      "defaultClientScopes": [
+        "basic",
+        "web-origins",
+        "acr",
+        "profile",
+        "roles",
+        "email"
+      ],
+      "protocolMappers": [
+        {
+          "name": "api-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.custom.audience": "enterpriseflow-api",
+            "id.token.claim": "false",
+            "access.token.claim": "true"
+          }
+        },
+        {
+          "name": "department",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "config": {
+            "user.attribute": "department",
+            "claim.name": "department",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "94ebeb86-85e6-56a7-b9dd-11ce3fccaace",
+      "username": "finance.employee",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Avery",
+      "lastName": "Stone Employee",
+      "email": "finance.employee@example.test",
+      "attributes": {
+        "department": [
+          "finance"
+        ]
+      },
+      "realmRoles": [
+        "employee"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "c03273d9-d53a-5930-80b8-e0c7dd3710b8",
+      "username": "finance.manager",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Avery",
+      "lastName": "Stone Manager",
+      "email": "finance.manager@example.test",
+      "attributes": {
+        "department": [
+          "finance"
+        ]
+      },
+      "realmRoles": [
+        "manager"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "4452e3ab-04d2-5219-8e03-d36dc9f9cc16",
+      "username": "hr.employee",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Morgan",
+      "lastName": "Reed Employee",
+      "email": "hr.employee@example.test",
+      "attributes": {
+        "department": [
+          "hr"
+        ]
+      },
+      "realmRoles": [
+        "employee"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "fe3d54ef-aae2-5d0e-83ae-c154fbc3c300",
+      "username": "hr.manager",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Morgan",
+      "lastName": "Reed Manager",
+      "email": "hr.manager@example.test",
+      "attributes": {
+        "department": [
+          "hr"
+        ]
+      },
+      "realmRoles": [
+        "manager"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "b08cf10d-3651-529b-babe-e923e79d0153",
+      "username": "legal.employee",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Rowan",
+      "lastName": "Vale Employee",
+      "email": "legal.employee@example.test",
+      "attributes": {
+        "department": [
+          "legal"
+        ]
+      },
+      "realmRoles": [
+        "employee"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "27782f3b-dc6b-5b92-bab3-72f19191877c",
+      "username": "legal.manager",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Rowan",
+      "lastName": "Vale Manager",
+      "email": "legal.manager@example.test",
+      "attributes": {
+        "department": [
+          "legal"
+        ]
+      },
+      "realmRoles": [
+        "manager"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "3a26a76c-e578-5fac-8187-0537379740ff",
+      "username": "operations.employee",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Jordan",
+      "lastName": "West Employee",
+      "email": "operations.employee@example.test",
+      "attributes": {
+        "department": [
+          "operations"
+        ]
+      },
+      "realmRoles": [
+        "employee"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "4921e245-775c-5fb4-b871-c75af979cbb3",
+      "username": "operations.manager",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Jordan",
+      "lastName": "West Manager",
+      "email": "operations.manager@example.test",
+      "attributes": {
+        "department": [
+          "operations"
+        ]
+      },
+      "realmRoles": [
+        "manager"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "6a80a0a9-cf2c-54d0-850d-8cf8bddb38ca",
+      "username": "platform.admin",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Taylor",
+      "lastName": "platform_admin",
+      "email": "platform.admin@example.test",
+      "attributes": {
+        "department": []
+      },
+      "realmRoles": [
+        "platform_admin"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "id": "512cdc86-b31a-5811-aa5d-efd26172b3f4",
+      "username": "audit.viewer",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Casey",
+      "lastName": "auditor",
+      "email": "audit.viewer@example.test",
+      "attributes": {
+        "department": [
+          "finance"
+        ]
+      },
+      "realmRoles": [
+        "auditor"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalDemo2026!",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,862 @@
+[
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0001",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "101 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 4,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0002",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "102 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bedrooms": 5,
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0003",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "103 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 5,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 6,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0004",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "104 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0005",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "105 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 3,
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bedrooms": 4,
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0006",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "106 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 4,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 5,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0007",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "107 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 5,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 6,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0008",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "108 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 2,
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bedrooms": 3,
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0009",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "109 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 3,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 4,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0010",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "110 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 4,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 5,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [
+      "bedrooms"
+    ],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0011",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "111 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0012",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "112 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0013",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "113 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0014",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "114 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0015",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "115 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0016",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "116 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0017",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "117 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0018",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "118 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0019",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "119 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0020",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "120 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": [
+      "bedrooms"
+    ]
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0021",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "121 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 3,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 3,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0022",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "122 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 4,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 4,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0023",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "123 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 5,
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bedrooms": 5,
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0024",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "124 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 2,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 2,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0025",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "125 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 3,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0026",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "126 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 4,
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bedrooms": 4,
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0027",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "127 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 5,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 5,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0028",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "128 Imaginary Orchard Lane",
+          "city": "Example Harbor",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 2,
+          "bathrooms": 2,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Example Harbor",
+          "bedrooms": 2,
+          "bathrooms": 2
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0029",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "129 Imaginary Orchard Lane",
+          "city": "Imaginary Mesa",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 3,
+          "bathrooms": 3,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Imaginary Mesa",
+          "bedrooms": 3,
+          "bathrooms": 3
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  },
+  {
+    "synthetic": true,
+    "property_id": "DEMO-P-0030",
+    "sources": [
+      {
+        "name": "fictional_intake_feed",
+        "fields": {
+          "address": "130 Imaginary Orchard Lane",
+          "city": "Fable Springs",
+          "state": "XX",
+          "postal_code": "00000",
+          "bedrooms": 4,
+          "bathrooms": 1,
+          "status": "REO"
+        }
+      },
+      {
+        "name": "fictional_review_sheet",
+        "fields": {
+          "city": "Fable Springs",
+          "bedrooms": 4,
+          "bathrooms": 1
+        }
+      }
+    ],
+    "expected_conflict_fields": [],
+    "expected_missing_fields": []
+  }
+]

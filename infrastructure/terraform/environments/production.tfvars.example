@@ -1,0 +1,14 @@
+environment = "production"
+region = "us-east-1"
+app_domain = "production.enterpriseflow.example.com"
+certificate_arn = "arn:aws:acm:us-east-1:123456789012:certificate/REPLACE"
+oidc_issuer = "https://identity.example.com/realms/enterpriseflow"
+github_oidc_provider_arn = "arn:aws:iam::123456789012:oidc-provider/token.actions.githubusercontent.com"
+api_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/enterpriseflow-production-api:REPLACE_SHA"
+web_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/enterpriseflow-production-web:REPLACE_SHA"
+# Bootstrap at zero; populate secrets, provision restricted DB role, migrate,
+# then set 1 (development/staging) or 2 (production).
+desired_count = 0
+enable_deletion_protection = true
+# Supply TF_VAR_redis_auth_token outside version control.
+clamav_host = "scanner.internal.example.com"

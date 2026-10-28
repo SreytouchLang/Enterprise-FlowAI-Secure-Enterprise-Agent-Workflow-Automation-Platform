@@ -1,0 +1,637 @@
+{
+  "synthetic": true,
+  "notice": "Entirely fictional demonstration fixtures. No real people, properties, agreements or invoices.",
+  "users": 10,
+  "departments": 4,
+  "agents": 4,
+  "invoices": [
+    {
+      "path": "invoices/invoice-01.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 01",
+        "invoice_number": "DEMO-INV-0001",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "925.00",
+        "tax": "74.00",
+        "total": "999.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 01",
+            "quantity": "1",
+            "unit_price": "925.00",
+            "amount": "925.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-02.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 02",
+        "invoice_number": "DEMO-INV-0002",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1000.00",
+        "tax": "80.00",
+        "total": "1080.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 02",
+            "quantity": "1",
+            "unit_price": "1000.00",
+            "amount": "1000.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-03.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 03",
+        "invoice_number": "DEMO-INV-0003",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1075.00",
+        "tax": "86.00",
+        "total": "1161.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 03",
+            "quantity": "1",
+            "unit_price": "1075.00",
+            "amount": "1075.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-04.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 04",
+        "invoice_number": "DEMO-INV-0004",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1150.00",
+        "tax": "92.00",
+        "total": "1242.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 04",
+            "quantity": "1",
+            "unit_price": "1150.00",
+            "amount": "1150.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-05.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 05",
+        "invoice_number": "DEMO-INV-0005",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1225.00",
+        "tax": "98.00",
+        "total": "1323.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 05",
+            "quantity": "1",
+            "unit_price": "1225.00",
+            "amount": "1225.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-06.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 06",
+        "invoice_number": "DEMO-INV-0006",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1300.00",
+        "tax": "104.00",
+        "total": "1404.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 06",
+            "quantity": "1",
+            "unit_price": "1300.00",
+            "amount": "1300.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-07.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 07",
+        "invoice_number": "DEMO-INV-0007",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1375.00",
+        "tax": "110.00",
+        "total": "1485.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 07",
+            "quantity": "1",
+            "unit_price": "1375.00",
+            "amount": "1375.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-08.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 08",
+        "invoice_number": "DEMO-INV-0008",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1450.00",
+        "tax": "116.00",
+        "total": "1566.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 08",
+            "quantity": "1",
+            "unit_price": "1450.00",
+            "amount": "1450.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-09.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 09",
+        "invoice_number": "DEMO-INV-0009",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1525.00",
+        "tax": "122.00",
+        "total": "1647.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 09",
+            "quantity": "1",
+            "unit_price": "1525.00",
+            "amount": "1525.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-10.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 10",
+        "invoice_number": "DEMO-INV-0010",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1600.00",
+        "tax": "128.00",
+        "total": "1728.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 10",
+            "quantity": "1",
+            "unit_price": "1600.00",
+            "amount": "1600.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-11.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 11",
+        "invoice_number": "DEMO-INV-0011",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1675.00",
+        "tax": "134.00",
+        "total": "1809.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 11",
+            "quantity": "1",
+            "unit_price": "1675.00",
+            "amount": "1675.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-12.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 12",
+        "invoice_number": "DEMO-INV-0012",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1750.00",
+        "tax": "140.00",
+        "total": "1890.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 12",
+            "quantity": "1",
+            "unit_price": "1750.00",
+            "amount": "1750.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-13.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 13",
+        "invoice_number": "DEMO-INV-0013",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1825.00",
+        "tax": "146.00",
+        "total": "1971.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 13",
+            "quantity": "1",
+            "unit_price": "1825.00",
+            "amount": "1825.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-14.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 14",
+        "invoice_number": "DEMO-INV-0014",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1900.00",
+        "tax": "152.00",
+        "total": "2052.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 14",
+            "quantity": "1",
+            "unit_price": "1900.00",
+            "amount": "1900.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-15.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 15",
+        "invoice_number": "DEMO-INV-0015",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "1975.00",
+        "tax": "158.00",
+        "total": "2133.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 15",
+            "quantity": "1",
+            "unit_price": "1975.00",
+            "amount": "1975.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-16.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 16",
+        "invoice_number": "DEMO-INV-0016",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "2050.00",
+        "tax": "164.00",
+        "total": "2214.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 16",
+            "quantity": "1",
+            "unit_price": "2050.00",
+            "amount": "2050.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-17.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 17",
+        "invoice_number": "DEMO-INV-0017",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "2125.00",
+        "tax": "170.00",
+        "total": "2295.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 17",
+            "quantity": "1",
+            "unit_price": "2125.00",
+            "amount": "2125.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-18.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 18",
+        "invoice_number": "DEMO-INV-0018",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "2200.00",
+        "tax": "176.00",
+        "total": "2376.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 18",
+            "quantity": "1",
+            "unit_price": "2200.00",
+            "amount": "2200.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-19.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 19",
+        "invoice_number": "DEMO-INV-0019",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "2275.00",
+        "tax": "182.00",
+        "total": "2457.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 19",
+            "quantity": "1",
+            "unit_price": "2275.00",
+            "amount": "2275.00"
+          }
+        ]
+      }
+    },
+    {
+      "path": "invoices/invoice-20.pdf",
+      "expected": {
+        "vendor_name": "Fictional Property Services 20",
+        "invoice_number": "DEMO-INV-0020",
+        "invoice_date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "currency": "USD",
+        "subtotal": "2350.00",
+        "tax": "188.00",
+        "total": "2538.00",
+        "line_items": [
+          {
+            "description": "Fictional property inspection 20",
+            "quantity": "1",
+            "unit_price": "2350.00",
+            "amount": "2350.00"
+          }
+        ]
+      }
+    }
+  ],
+  "hr_documents": [
+    {
+      "path": "hr/01-vacation-policy.md",
+      "title": "Vacation Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/02-onboarding-policy.md",
+      "title": "Onboarding Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/03-benefits-guide.md",
+      "title": "Benefits Guide",
+      "department": "hr"
+    },
+    {
+      "path": "hr/04-remote-work.md",
+      "title": "Remote Work Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/05-security-training.md",
+      "title": "Security Training Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/06-equipment-return.md",
+      "title": "Equipment Return Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/07-expense-policy.md",
+      "title": "Expense Submission Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/08-document-retention.md",
+      "title": "HR Document Retention Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/09-learning-development.md",
+      "title": "Learning and Development Policy",
+      "department": "hr"
+    },
+    {
+      "path": "hr/10-manager-review.md",
+      "title": "Manager Review Policy",
+      "department": "hr"
+    }
+  ],
+  "legal_documents": [
+    {
+      "path": "legal/agreement-01.md",
+      "title": "Fictional Service Agreement 01",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 01"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-02.md",
+      "title": "Fictional Service Agreement 02",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 02"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-03.md",
+      "title": "Fictional Service Agreement 03",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 03"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-04.md",
+      "title": "Fictional Service Agreement 04",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 04"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-05.md",
+      "title": "Fictional Service Agreement 05",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 05"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-06.md",
+      "title": "Fictional Service Agreement 06",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 06"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-07.md",
+      "title": "Fictional Service Agreement 07",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 07"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-08.md",
+      "title": "Fictional Service Agreement 08",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 08"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-09.md",
+      "title": "Fictional Service Agreement 09",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 09"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    },
+    {
+      "path": "legal/agreement-10.md",
+      "title": "Fictional Service Agreement 10",
+      "expected": {
+        "document_type": "service_agreement",
+        "parties": [
+          "Fictional Marketplace Laboratory",
+          "Imaginary Vendor 10"
+        ],
+        "effective_date": "2026-10-01",
+        "termination_date": "2027-10-01",
+        "renewal_type": "manual",
+        "requires_human_review": true
+      }
+    }
+  ],
+  "property_listings": 30,
+  "example_workflows": 10,
+  "historical_workflow_runs": 15,
+  "historical_notice": "Historical workflow records are generated by app.seed and labeled seeded demonstration data, never live executions."
+}

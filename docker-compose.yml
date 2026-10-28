@@ -1,0 +1,174 @@
+name: enterpriseflow
+x-api: &api
+  image: enterpriseflow-api:local
+  build:
+    context: .
+    dockerfile: infrastructure/docker/api.Dockerfile
+  env_file: ${ENV_FILE:-.env}
+  init: true
+  restart: unless-stopped
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_ADMIN_PASSWORD:-local-demo-admin-password}
+      POSTGRES_DB: ${POSTGRES_DB:-enterpriseflow}
+      APP_DB_USER: ${POSTGRES_USER:-enterpriseflow}
+      APP_DB_PASSWORD: ${POSTGRES_PASSWORD:-local-demo-db-password}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infrastructure/docker/postgres:/docker-entrypoint-initdb.d:ro
+    ports: ["127.0.0.1:5432:5432"]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U postgres -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.4-alpine
+    command: [redis-server, --appendonly, "yes", --maxmemory-policy, noeviction]
+    volumes: [redisdata:/data]
+    ports: ["127.0.0.1:6379:6379"]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  minio:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/minio.Dockerfile
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY:-local-demo-storage}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY:-local-demo-storage-password}
+    volumes: [miniodata:/data]
+    ports: ["127.0.0.1:9000:9000", "127.0.0.1:9001:9001"]
+    healthcheck:
+      test: [CMD, curl, --fail, --silent, http://localhost:9000/minio/health/live]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  storage-init:
+    <<: *api
+    command: [python, create_bucket.py]
+    depends_on:
+      minio: {condition: service_healthy}
+    restart: "no"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.0
+    command: start-dev --import-realm
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-local-demo-keycloak-password}
+      KC_HOSTNAME: http://localhost:8080
+      KC_HEALTH_ENABLED: "true"
+    volumes:
+      - keycloakdata:/opt/keycloak/data
+      - ./infrastructure/docker/keycloak:/opt/keycloak/data/import:ro
+    ports: ["127.0.0.1:8080:8080"]
+    healthcheck:
+      # Keycloak intentionally ships without curl; probe its management endpoint.
+      test: [CMD, bash, -ec, "exec 3<>/dev/tcp/127.0.0.1/9000; printf 'HEAD /health/ready HTTP/1.0\\r\\n\\r\\n' >&3; grep -q 'HTTP/1.0 200' <&3"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    mem_limit: 1g
+    restart: unless-stopped
+
+  migrate:
+    <<: *api
+    command: [alembic, upgrade, head]
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:${POSTGRES_ADMIN_PASSWORD:-local-demo-admin-password}@postgres:5432/${POSTGRES_DB:-enterpriseflow}
+    depends_on:
+      postgres: {condition: service_healthy}
+    restart: "no"
+
+  backend:
+    <<: *api
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      storage-init: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+      keycloak: {condition: service_healthy}
+    ports: ["127.0.0.1:8000:8000"]
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/live')"]
+      interval: 10s
+      timeout: 3s
+      retries: 20
+      start_period: 30s
+
+  worker:
+    <<: *api
+    command: [celery, -A, app.worker.celery_app, worker, --loglevel=INFO, --concurrency=2]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      storage-init: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: [CMD-SHELL, "celery -A app.worker.celery_app inspect ping -d celery@$$HOSTNAME --timeout=5"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  clamav:
+    image: clamav/clamav:stable_base
+    profiles: [antivirus]
+    volumes: [clamavdata:/var/lib/clamav]
+    mem_limit: 2g
+    healthcheck:
+      test: [CMD, clamdscan, --ping=1, --quiet]
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 180s
+    restart: unless-stopped
+
+  scheduler:
+    <<: *api
+    command: [celery, -A, app.worker.celery_app, beat, --loglevel=INFO, --schedule=/tmp/enterpriseflow-beat]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+
+  frontend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/web.Dockerfile
+    environment:
+      API_INTERNAL_URL: http://backend:8000
+    depends_on:
+      backend: {condition: service_healthy}
+    ports: ["127.0.0.1:3000:3000"]
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000', {signal: AbortSignal.timeout(4000)}).then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    init: true
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  redisdata:
+  miniodata:
+  keycloakdata:
+  clamavdata:

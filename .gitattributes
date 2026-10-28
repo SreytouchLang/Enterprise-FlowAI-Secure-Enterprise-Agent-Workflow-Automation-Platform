@@ -1,0 +1,2 @@
+# Preserve generated document bytes and avoid text merges of binary artifacts.
+*.pdf binary

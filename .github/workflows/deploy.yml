@@ -1,0 +1,66 @@
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target protected GitHub environment
+        required: true
+        type: choice
+        options: [staging, production]
+      release_sha:
+        description: Full 40-character commit SHA with a successful CI run
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+  id-token: write
+concurrency:
+  group: deploy-${{ inputs.environment }}
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Configure required reviewers for production in GitHub repository settings.
+    environment: ${{ inputs.environment }}
+    env:
+      RELEASE_SHA: ${{ inputs.release_sha }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      ECS_CLUSTER: ${{ vars.ECS_CLUSTER }}
+      ECR_API_REPOSITORY: ${{ vars.ECR_API_REPOSITORY }}
+      ECR_WEB_REPOSITORY: ${{ vars.ECR_WEB_REPOSITORY }}
+      PRIVATE_SUBNET_IDS: ${{ vars.PRIVATE_SUBNET_IDS }}
+      TASK_SECURITY_GROUP_ID: ${{ vars.TASK_SECURITY_GROUP_ID }}
+      TASK_FAMILY_PREFIX: ${{ vars.TASK_FAMILY_PREFIX }}
+    steps:
+      - name: Validate immutable release and completed CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo 'release_sha must be a full commit SHA'; exit 1; }
+          gh api "repos/$GH_REPO/actions/workflows/ci.yml/runs?head_sha=$RELEASE_SHA&status=success" --jq '.workflow_runs | any(.event == "push" and .head_branch == "main")' | grep -qx true
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_sha }}
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: aws-actions/amazon-ecr-login@v2
+        id: ecr
+      - uses: docker/setup-buildx-action@v3
+      - name: Build and push immutable release images
+        env:
+          REGISTRY: ${{ steps.ecr.outputs.registry }}
+        run: |
+          for component in api web; do
+            if [ "$component" = api ]; then repository="$ECR_API_REPOSITORY"; else repository="$ECR_WEB_REPOSITORY"; fi
+            if ! aws ecr describe-images --repository-name "$repository" --image-ids imageTag="$RELEASE_SHA" >/dev/null 2>&1; then
+              docker buildx build --platform linux/amd64 --push -f "infrastructure/docker/$component.Dockerfile" -t "$REGISTRY/$repository:$RELEASE_SHA" .
+            fi
+          done
+      - name: Migrate then roll out services
+        env:
+          REGISTRY: ${{ steps.ecr.outputs.registry }}
+        run: python3 infrastructure/deploy.py
