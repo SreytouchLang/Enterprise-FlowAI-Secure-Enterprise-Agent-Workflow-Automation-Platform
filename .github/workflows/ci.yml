@@ -24,7 +24,7 @@ jobs:
       - run: mypy --config-file apps/api/pyproject.toml apps/api/app
       - run: pytest apps/api/tests tests infrastructure/tests -q
       - run: python -m app.evaluation
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: evaluation-results
@@ -49,7 +49,7 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: browser-test-results
@@ -140,7 +140,7 @@ jobs:
         if: always()
         timeout-minutes: 2
         run: python3 infrastructure/collect_compose_diagnostics.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         timeout-minutes: 2
         with:
