@@ -1,6 +1,6 @@
 # Upstream community images were withdrawn; build the pinned official source.
 # Local synthetic-data development only. Production uses AWS S3.
-FROM golang:1.25-bookworm AS builder
+FROM golang:1.27-bookworm AS builder
 ARG MINIO_RELEASE=RELEASE.2025-10-15T17-29-55Z
 RUN CGO_ENABLED=0 GOBIN=/out go install github.com/minio/minio@${MINIO_RELEASE}
 RUN cp /go/pkg/mod/github.com/minio/minio@*/LICENSE /out/LICENSE
